@@ -56,18 +56,7 @@ function ThreeDimensionBlock() {
   loader.load('/IMG/sunset.jpg', function(texture) {
       scene.background = texture;
   });
-
-/*
-  loader = new THREE.CubeTextureLoader();
-  skybox = loader.load([
-      '/IMG/155843.jpg',  // px
-      '/IMG/155843.jpg',   // nx
-      '/IMG/155843.jpg',    // py
-      '/IMG/155843.jpg', // ny
-      '/IMG/155843.jpg',  // pz
-      '/IMG/155843.jpg'    // nz
-  ]);
-*/
+  
   scene.background = skybox;
 
   camera.position.z = 20;
@@ -101,7 +90,6 @@ function ThreeDimensionBlock() {
   visibleHeight = 2 * Math.tan(vFOV / 2) * camera.position.z;
 
   groundGeometry = new THREE.BoxGeometry(10000,10000,1);
-  //groundMaterial = new THREE.MeshLambertMaterial({color:0x87CEEB});
   groundMaterial = new THREE.MeshPhongMaterial({
     color: 0xFFFFFF,
     transparent: true,
@@ -114,29 +102,6 @@ function ThreeDimensionBlock() {
   ground.castShadow = true; 
   ground.receiveShadow = true;
   scene.add(ground); 
-
-/*
-  textureLoader = new THREE.TextureLoader();
-  topTexture = textureLoader.load('/IMG/155843.jpg');
-
-  topMaterial =  new THREE.MeshBasicMaterial({ map: topTexture, side: THREE.DoubleSide }); 
-  //bottomMaterial =  new THREE.MeshBasicMaterial({side: THREE.DoubleSide }); 
-  //topMaterial.color.setHSL(hue, .7, .3); 
-
-  backgroundPlaneSize = 4000;
-  backgroundPlaneGeometry = new THREE.PlaneGeometry(backgroundPlaneSize, backgroundPlaneSize);
-
-  topPlane = new THREE.Mesh(backgroundPlaneGeometry, topMaterial);
-  //bottomPlane = new THREE.Mesh(backgroundPlaneGeometry, bottomMaterial);
-
-  topPlane.position.set(0,0,0);
-  topPlane.rotation.x = -Math.PI / 2;
-
-  //bottomPlane.position.set(0,-1000,0);
-  //bottomPlane.rotation.x = -Math.PI/2;
-  scene.add(topPlane);
-  //scene.add(bottomPlane); 
-*/
 
   geometry = new THREE.BoxGeometry(1, 1, 1);
 
@@ -211,12 +176,7 @@ function ThreeDimensionBlock() {
   function update() {
       dataArray = getAudioDataFrequency();
       hue = getPitch(); 
-
       smoothHue += (hue - smoothHue) * 0.0001; 
-//      directionalLight.color.setHSL(smoothHue,0.5,0.5);
-//      topPlane.position.set(camera.position.x, camera.position.y + 1000, camera.position.z);
-//      bottomPlane.position.set(camera.position.x, camera.position.y - 1000, camera.position.z);
-//      bottomPlane.lookAt(camera.position);
   }
 
   lastPulse = 1;
@@ -224,7 +184,6 @@ function ThreeDimensionBlock() {
       update();
       startPOVChange();
       updatePOV();
-      //groundMaterial.color.setHSL(hue, .7, .3); 
       renderer.render(scene, camera);
 
       let totalEnergy = 0;
