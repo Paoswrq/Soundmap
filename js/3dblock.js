@@ -1,5 +1,5 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.module.js';
-import {startMicrophoneAnalysis, getAudioDataFrequency, getPitch} from "/js/core.js";
+import {startMicrophoneAnalysis, getAudioDataFrequency, getPitch} from "./js/core.js";
 let dataArray = null;
 let scene = null;
 let hue = null;
@@ -53,7 +53,7 @@ function ThreeDimensionBlock() {
 
 
   loader = new THREE.TextureLoader();
-  loader.load('/IMG/sunset.jpg', function(texture) {
+  loader.load('./IMG/sunset.jpg', function(texture) {
       scene.background = texture;
   });
   

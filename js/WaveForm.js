@@ -1,4 +1,4 @@
-import { startMicrophoneAnalysis, getAudioData, getPitch} from "/js/core.js";
+import { startMicrophoneAnalysis, getAudioData, getPitch} from "./js/core.js";
 
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
