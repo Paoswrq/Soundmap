@@ -26,9 +26,9 @@ export function loopWave() {
         let gradient = ctx.createLinearGradient(0,0,canvas.width,0);
         gradient.addColorStop(0,  "hsl(" + (hue + 180) * 1.00 + ", 70%, 50%)")
         gradient.addColorStop(0.25,  "hsl(" + (hue + 180) * 0.98 + ", 70%, 50%)")
-        gradient.addColorStop(0.5,  "hsl(" + (hue + 180) * 0.86 + ", 70%, 50%)")
-        gradient.addColorStop(0.75,  "hsl(" + (hue + 180) * 0.74 + ", 70%, 50%)")
-        gradient.addColorStop(1,  "hsl(" + (hue + 180) * 0.52 + ", 70%, 50%)")
+        gradient.addColorStop(0.5,  "hsl(" + (hue + 180) * 0.9 + ", 70%, 50%)")
+        gradient.addColorStop(0.75,  "hsl(" + (hue + 180) * 0.84 + ", 70%, 50%)")
+        gradient.addColorStop(1,  "hsl(" + (hue + 180) * 0.72 + ", 70%, 50%)")
 
         for (let i = 0; i < dataArray.length; i++) {
           let v = (dataArray[i] - 128) / 128; 
