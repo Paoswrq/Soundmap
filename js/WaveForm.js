@@ -54,7 +54,7 @@ export function loopWave() {
 
         ctx.strokeStyle = gradient;
         //ctx.lineWidth = 2; 
-        ctx.lineWidth = Math.random() * 5 + 2;
+        ctx.lineWidth = 3;
         //ctx.shadowColor
         ctx.stroke();
     });
