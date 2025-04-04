@@ -79,7 +79,7 @@ export function loopFireWork() {
     let rms = Math.sqrt(sum / dataArray.length);
     let loudness = 6 + 20 * Math.log10(rms); 
 
-    if(loudness > 15) {
+    if(loudness > 28) {
       createExplosion(loudness);
     }
     animate();
