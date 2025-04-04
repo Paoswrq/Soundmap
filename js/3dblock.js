@@ -1,5 +1,5 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.module.js';
-import {startMicrophoneAnalysis, getAudioDataFrequency, getPitch} from "./js/core.js";
+import {startMicrophoneAnalysis, getAudioDataFrequency, getPitch} from "./core.js";
 let dataArray = null;
 let scene = null;
 let hue = null;
@@ -152,7 +152,7 @@ function ThreeDimensionBlock() {
   nowTimePOV = Date.now();
 
   function startPOVChange() {
-      if (Date.now() - nowTimePOV > 5000) {
+      if (Date.now() - nowTimePOV > 10000) {
           changingPOV = true;
           povTransitionStartTime = Date.now();
           initialCameraPosition.copy(camera.position);

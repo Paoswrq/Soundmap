@@ -1,8 +1,8 @@
-import { startMicrophoneAnalysis, getAudioData } from "./js/core.js";
+import { startMicrophoneAnalysis, getAudioData } from "./core.js";
 
-import { loopWave } from "./js/WaveForm.js";
-import { loopFireWork } from "./js/FireBrust.js";
-import { loopBlock } from "./js/3dblock.js";
+import { loopWave } from "./WaveForm.js";
+import { loopFireWork } from "./FireBrust.js";
+import { loopBlock } from "./3dblock.js";
 
 let listofModules = [window.waveformactive, window.fireworkactive, window.blocksactive];
 let currentmodule = 0;
